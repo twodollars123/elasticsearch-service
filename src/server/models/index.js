@@ -39,12 +39,11 @@ async function getQuotes(req) {
   };
 }
 
-async function insertNewQuote(quote, author) {
+async function insertNewQuote(index, name, author) {
   return esclient.index({
     index,
-    type,
     body: {
-      quote,
+      name,
       author,
     },
   });
